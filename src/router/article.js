@@ -1,10 +1,15 @@
 const express = require('express')
 const controller = require('../controller/article')
-const user = express.Router()
+const router = express.Router()
 
-user.post('/create', controller.createArticle)
+router.post('/createArticle', controller.createArticle);
+router.get('/findArticle', controller.findAllArticle);
+router.delete('/article', controller.removeArticle);
+router.put('/editArticle', controller.editArticle);
+router.get('/findCategoryArticle', controller.findCatogoryBasedArticle);
+router.post('/createCategory', controller.createCategory);
+router.get('/findCategory', controller.findAllCategory);
 
 
-
-module.exports = user
+module.exports = router
 
